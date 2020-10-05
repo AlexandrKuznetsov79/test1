@@ -2,7 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { Subscription } from 'rxjs';
-
+import JestWorker from 'jest-worker';
 // get/set Decorator
 const logSet = (
   target: Object,
@@ -65,6 +65,13 @@ export class Page1Component implements OnInit, OnDestroy {
         this.price = queryParam['price'];
       }
     );
+
+    const arr = ['test', 'lamp'];
+    console.log('arr', arr);
+    arr.unshift('sem');
+    console.log('arr', arr);
+    const tt = arr.shift();
+    console.log('arr', arr, tt, arr.reverse());
   }
 
   ngOnDestroy(): void {
